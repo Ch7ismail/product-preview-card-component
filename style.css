@@ -1,0 +1,135 @@
+:root{
+    --DarkCyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --VeryDarkBlue: hsl(212, 21%, 14%);
+    --DarkGrayishBlue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    justify-content: center;
+    background-color: var(--Cream);
+}
+
+.card{
+    margin:30px 20px;
+    border-radius: 10px;
+    background-color: var(--White);
+}
+
+.product-img >img[data-screen="mobile"]{
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.body{
+    margin: 2rem;
+    font-size: clamp(1em, 1vw, 1.5em);
+}
+
+.product-img >img[data-screen="desktop"]{
+    display: none;
+}
+
+
+.product-title{
+    font-family: montserrat;
+    color: var(--DarkGrayishBlue);
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+}
+
+.product-name{
+    font-family: Fraunces;
+    color: var(--VeryDarkBlue);
+    font-weight: 700;
+    padding: 1rem 0;
+}
+
+.product-desc .txt{
+    font-family: montserrat;
+    color: var(--DarkGrayishBlue);
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.product-price{
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.product-new-price{
+    font-family: Fraunces;
+    color: var(--DarkCyan);
+    font-weight: 700;
+    padding-right: 1rem;
+}
+
+.product-old-price{
+    font-family: montserrat;
+    color: var(--DarkGrayishBlue);
+    font-weight: 100;
+    padding-right: 1rem;
+}
+
+.button{
+    width: 100%;
+    color: var(--White);
+    background-color: var(--DarkCyan);
+    padding: 0.8rem 2rem;
+    font-family: montserrat;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(1em, 1vw, 1.5em);
+}
+
+@media (min-width: 1180px){
+    body{
+    align-items: center;
+    min-height: 100vh;
+    }
+    .product-img >img[data-screen="mobile"]{
+        display: none;
+    }
+    .product-img{
+        min-width: 50%;
+        margin: 0 auto;
+    }
+    .product-img >img[data-screen="desktop"]{
+        display: block;
+        width: clamp(100%, 100%, 600px);
+        min-height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+    .card{
+        width: 50vw;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+        margin: 0;
+        padding: 0;
+    }
+    .body{
+        width: auto;
+    }
+    .body .product-name{
+        width: 70%;
+    }
+
+}
+
+@media (min-width:1440px){
+    .product-desc{
+        width: 70%;
+    }
+}
